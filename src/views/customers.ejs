@@ -14,9 +14,25 @@
           </tr>
         </thead>
         <tbody>
-        
+          <% if(customers){ %> <% for(var i = 0; i < customers.length; i++){
+            %>
+            <tr>
+              <td><%= (i + 1 )%></td>
+              <td><%= customers[i].name %></td>
+              <td><%= customers[i].address %></td>
+              <td><%= customers[i].phone %></td>
+              <td class="d-flex gap-2">
+                <a herf="" class="btn btn-info">
+                  Edit
+                </a>
+                <a href="" class="btn btn-danger">
+                  Eliminar
+                </a>
+              </td>
+            </tr>
+          <% } %> <% } %>
         </tbody>
-      </table>
+      </ta ble>
     </div>
     <div class="col-md-5">
       <div class="card-body">

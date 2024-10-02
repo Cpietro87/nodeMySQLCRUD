@@ -15,3 +15,9 @@ npm i morgan
 configuración db 
     crear db.sql
 
+## Para levantar proyecto descargado de git
+crear db usando db.sql
+abrir proyecto en vsc 
+creo .env con la cofiguración personal de mysql
+abrir terminal npm install 
+
