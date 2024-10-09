@@ -1,7 +1,7 @@
 iniciar  proyecto
     npm init --yes
 instalar las dependencias
-    npm install express mysql2 express-myconnection ejs 
+    npm install express mysql2 ejs 
 levantar el servidor
 instalo nodemon para no estar levantado el servidor cuado una modificación
     npm i nodemon -D
@@ -12,6 +12,7 @@ instalo dotenv
 congifuración para usar las views
 instalar morgan para ver las peticiones del cliente (http)
 npm i morgan
+configurar la carpeta public
 configuración db 
     crear db.sql
 

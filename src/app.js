@@ -11,6 +11,7 @@ import customerRouter from "./router/customer.routes.js";
 const app = express()
 //cargar las variables de entorno
 dotenv.config();
+
 //Obtener el nombre de los archivos actuales y su dirección
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename) 
@@ -22,6 +23,7 @@ app.set('views', join(__dirname, 'views'))
 
 //middlerware
 app.use(morgan('dev'));
+app.use(express.urlencoded({ extended: false }))
 
 // static files
 app.use(express.static(join(__dirname, "public")));

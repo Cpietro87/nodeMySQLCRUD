@@ -5,8 +5,11 @@ export const renderCustomers = async(req, res) => {
    res.render("customers", {customers: row});
 }
 
-class Customer {
-   constructor(){}
-
-   
+export const createCustomers = (req, res) => {
+   console.log('Esta entrando al metodo')
+   const newCustomer = req.body;
+   console.log(newCustomer)
+   pool.query("INSERT INTO customer set ?", [newCustomer])
+   res.redirect("/")
 }
+
