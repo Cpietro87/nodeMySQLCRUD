@@ -13,3 +13,13 @@ export const createCustomers = (req, res) => {
    res.redirect("/")
 }
 
+export const deleteCustomer = async (req, res) => {
+   console.log('Esteo es para eliminar!!!')
+   const { id } = req.params;
+   const result = await pool.query("DELETE FROM customer WHERE id = ? ", [id])
+   if(result.affectedRows === 1){
+      res.json({ message: "Customer Eliminado"})
+   }
+   res.redirect("/")
+}
+
