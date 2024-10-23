@@ -7,6 +7,7 @@ import { dirname, join } from "path";
 
 //import rutas
 import customerRouter from "./router/customer.routes.js";
+import authRouter from "./router/auth.routes.js";
 
 const app = express()
 //cargar las variables de entorno
@@ -30,6 +31,8 @@ app.use(express.static(join(__dirname, "public")));
 
 //Router
 app.use(customerRouter);
+app.use(authRouter);
+
 
 // Servidor
 app.listen(app.get('port'), () => {

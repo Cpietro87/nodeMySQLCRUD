@@ -1,6 +1,6 @@
 CREATE DATABASE nodedbcrud;
 
-use nodedbcrud;
+USE nodedbcrud;
 
 CREATE TABLE customer(
     id INT(6) UNSIGNED AUTO_INCREMET PRIMARY KEY,
@@ -9,6 +9,12 @@ CREATE TABLE customer(
     phone VARCHAR(15)
 );
 
-show tables;
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL
+);
 
-describe customer;
+SHOW TABLES;
+
+DESCRIBE customer;

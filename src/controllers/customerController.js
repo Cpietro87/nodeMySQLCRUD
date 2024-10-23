@@ -14,7 +14,7 @@ export const createCustomers = (req, res) => {
 }
 
 export const deleteCustomer = async (req, res) => {
-   console.log('Esteo es para eliminar!!!')
+   console.log('Se eliminar!!!')
    const { id } = req.params;
    const result = await pool.query("DELETE FROM customer WHERE id = ? ", [id])
    if(result.affectedRows === 1){
@@ -22,4 +22,22 @@ export const deleteCustomer = async (req, res) => {
    }
    res.redirect("/")
 }
+
+export const editCustomer = async (req, res) => {
+   console.log('Este metodo es para editar')
+   const { id } = req.params;
+
+   const [result] = await pool.query("SELECT * FROM customer WHERE id = ?", [id,] );
+   res.render("customers_edit", { customer: result[0]})
+}
+
+export const updateCustomer = async (req, res) => {
+   const {id} = req.params;
+   const updateCustomer =  req.body;
+   await pool.query("UPDATE customer set ? WHERE id = ? ", [updateCustomer, id]);
+   res.redirect("/")
+}
+
+
+
 

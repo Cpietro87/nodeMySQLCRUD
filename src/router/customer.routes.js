@@ -1,9 +1,14 @@
 import { Router } from "express";
-import { renderCustomers, createCustomers, deleteCustomer} from "../controllers/customerController.js";
+import { renderCustomers, createCustomers, deleteCustomer, editCustomer, updateCustomer} from "../controllers/customerController.js";
+import { authLogin } from "../controllers/authController.js";
 const router = Router();
 
+//CRUD
 router.get("/", renderCustomers);
 router.post("/add", createCustomers);
-router.get("/delete/:id", deleteCustomer )
+router.get("/delete/:id", deleteCustomer);
+router.get("/update/:id", editCustomer);
+router.post("/update/:id", updateCustomer);
+
 
 export default router
